@@ -514,6 +514,17 @@ a {
 @media (max-width: 600px) {
   body {
     background-attachment: scroll;
+    background: linear-gradient(
+      135deg,
+      #020814 0%,
+      #0f2847 20%,
+      #1a3a5c 40%,
+      #2d5a8c 60%,
+      #4a8fd9 80%,
+      #0f2847 100%
+    );
+    background-size: 300% 300%;
+    animation: gradientShift 8s ease infinite;
   }
 
   .hero {
@@ -543,5 +554,19 @@ a {
 
   .benefit-icon {
     margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 }
