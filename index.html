@@ -26,13 +26,18 @@
         <span>Axus Analytics</span>
       </a>
       <nav class="nav">
-        <a href="#servicios">Servicios</a>
-        <a href="#web-editable">Web editable</a>
-        <a href="#metodo">Cómo trabajamos</a>
-        <a href="#experiencias">Experiencias</a>
-        <a href="#para-quien">Para quién</a>
-        <a class="btn btn-outline" href="#contacto">Contactar</a>
+        <a href="#servicios" data-i18n="nav.services">Servicios</a>
+        <a href="#web-editable" data-i18n="nav.webEditable">Web editable</a>
+        <a href="#metodo" data-i18n="nav.method">Cómo trabajamos</a>
+        <a href="#experiencias" data-i18n="nav.experiences">Experiencias</a>
+        <a href="#para-quien" data-i18n="nav.forWhom">Para quién</a>
+        <a class="btn btn-outline" href="#contacto" data-i18n="nav.contact">Contactar</a>
       </nav>
+      <div class="language-switcher" role="navigation" aria-label="Language selector">
+        <button class="lang-btn active" data-lang="es" aria-label="Español">ES</button>
+        <span class="lang-separator">|</span>
+        <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+      </div>
     </div>
   </header>
 
@@ -43,29 +48,29 @@
         <div class="brand-mark">
           <img src="axus-logo.png" alt="Logo Axus Analytics" />
         </div>
-        <p class="eyebrow">Consultoría en datos</p>
+        <p class="eyebrow" data-i18n="hero.eyebrow">Consultoría en datos</p>
         <h1>Axus Analytics</h1>
-        <h2>Análisis de datos para empresas</h2>
-        <p class="lead">Transformamos información en decisiones claras.</p>
+        <h2 data-i18n="hero.subtitle">Análisis de datos para empresas</h2>
+        <p class="lead" data-i18n="hero.lead">Transformamos información en decisiones claras.</p>
         <div class="hero-cta">
-          <a class="btn btn-primary" href="#contacto">Contactar</a>
+          <a class="btn btn-primary" href="#contacto" data-i18n="hero.cta">Contactar</a>
         </div>
       </div>
       <div class="hero-card" aria-hidden="true">
         <div class="metric">
           <span class="metric-title">Insight</span>
           <span class="metric-value">+35%</span>
-          <span class="metric-caption">Eficiencia operativa</span>
+          <span class="metric-caption" data-i18n="hero.metric1">Eficiencia operativa</span>
         </div>
         <div class="metric">
           <span class="metric-title">KPI</span>
           <span class="metric-value">24/7</span>
-          <span class="metric-caption">Monitoreo clave</span>
+          <span class="metric-caption" data-i18n="hero.metric2">Monitoreo clave</span>
         </div>
         <div class="metric">
-          <span class="metric-title">Ventas</span>
+          <span class="metric-title" data-i18n="hero.metric3Title">Ventas</span>
           <span class="metric-value">+18%</span>
-          <span class="metric-caption">Optimización comercial</span>
+          <span class="metric-caption" data-i18n="hero.metric3">Optimización comercial</span>
         </div>
       </div>
     </div>
@@ -74,24 +79,24 @@
   <!-- Servicios -->
   <section class="section" id="servicios">
     <div class="container">
-      <h3>Servicios</h3>
-      <p class="section-intro">Soluciones claras y accionables para entender y mejorar el rendimiento de tu negocio.</p>
+      <h3 data-i18n="services.title">Servicios</h3>
+      <p class="section-intro" data-i18n="services.intro">Soluciones claras y accionables para entender y mejorar el rendimiento de tu negocio.</p>
       <div class="grid cards">
         <article class="card">
-          <h4>Análisis de ventas</h4>
-          <p>Identificamos patrones, oportunidades y variaciones clave para potenciar ingresos.</p>
+          <h4 data-i18n="services.card1.title">Análisis de ventas</h4>
+          <p data-i18n="services.card1.desc">Identificamos patrones, oportunidades y variaciones clave para potenciar ingresos.</p>
         </article>
         <article class="card">
-          <h4>Análisis de gastos</h4>
-          <p>Detectamos ineficiencias y optimizamos costos con base en datos reales.</p>
+          <h4 data-i18n="services.card2.title">Análisis de gastos</h4>
+          <p data-i18n="services.card2.desc">Detectamos ineficiencias y optimizamos costos con base en datos reales.</p>
         </article>
         <article class="card">
-          <h4>Indicadores clave (KPIs)</h4>
-          <p>Definimos y monitoreamos métricas esenciales para decisiones rápidas.</p>
+          <h4 data-i18n="services.card3.title">Indicadores clave (KPIs)</h4>
+          <p data-i18n="services.card3.desc">Definimos y monitoreamos métricas esenciales para decisiones rápidas.</p>
         </article>
         <article class="card">
-          <h4>Reportes claros y accionables</h4>
-          <p>Entregamos reportes simples, precisos y enfocados en resultados.</p>
+          <h4 data-i18n="services.card4.title">Reportes claros y accionables</h4>
+          <p data-i18n="services.card4.desc">Entregamos reportes simples, precisos y enfocados en resultados.</p>
         </article>
       </div>
     </div>
@@ -102,42 +107,42 @@
     <div class="container">
       <div class="feature-section">
         <div class="feature-content">
-          <h3>Web profesional 100% editable</h3>
-          <p class="section-intro">Diseñamos y publicamos tu sitio web para que puedas modificar textos e imágenes cuando quieras, sin conocimientos técnicos y sin depender de nadie.</p>
+          <h3 data-i18n="webEditable.title">Web profesional 100% editable</h3>
+          <p class="section-intro" data-i18n="webEditable.intro">Diseñamos y publicamos tu sitio web para que puedas modificar textos e imágenes cuando quieras, sin conocimientos técnicos y sin depender de nadie.</p>
           
           <div class="benefits-list">
             <div class="benefit">
               <span class="benefit-icon">✓</span>
               <div>
-                <h5>Edición simple de textos e imágenes</h5>
-                <p>Modifica tu contenido sin complicaciones</p>
+                <h5 data-i18n="webEditable.benefit1.title">Edición simple de textos e imágenes</h5>
+                <p data-i18n="webEditable.benefit1.desc">Modifica tu contenido sin complicaciones</p>
               </div>
             </div>
             <div class="benefit">
               <span class="benefit-icon">✓</span>
               <div>
-                <h5>Panel fácil de usar</h5>
-                <p>Interfaz intuitiva diseñada para todos</p>
+                <h5 data-i18n="webEditable.benefit2.title">Panel fácil de usar</h5>
+                <p data-i18n="webEditable.benefit2.desc">Interfaz intuitiva diseñada para todos</p>
               </div>
             </div>
             <div class="benefit">
               <span class="benefit-icon">✓</span>
               <div>
-                <h5>Diseño responsive</h5>
-                <p>Perfecto en celular, tablet y PC</p>
+                <h5 data-i18n="webEditable.benefit3.title">Diseño responsive</h5>
+                <p data-i18n="webEditable.benefit3.desc">Perfecto en celular, tablet y PC</p>
               </div>
             </div>
             <div class="benefit">
               <span class="benefit-icon">✓</span>
               <div>
-                <h5>Web online y funcional en pocos días</h5>
-                <p>Deployment rápido y sin complicaciones</p>
+                <h5 data-i18n="webEditable.benefit4.title">Web online y funcional en pocos días</h5>
+                <p data-i18n="webEditable.benefit4.desc">Deployment rápido y sin complicaciones</p>
               </div>
             </div>
           </div>
 
           <div class="feature-cta">
-            <a class="btn btn-primary" href="#contacto">Contactanos</a>
+            <a class="btn btn-primary" href="#contacto" data-i18n="webEditable.cta">Contactanos</a>
           </div>
         </div>
       </div>
@@ -147,27 +152,27 @@
   <!-- Cómo trabajamos -->
   <section class="section alt" id="metodo">
     <div class="container">
-      <h3>Cómo trabajamos</h3>
+      <h3 data-i18n="method.title">Cómo trabajamos</h3>
       <div class="steps">
         <div class="step">
           <span class="step-number">01</span>
-          <h4>Recibimos los datos</h4>
-          <p>Relevamos tus fuentes de información y objetivos de negocio.</p>
+          <h4 data-i18n="method.step1.title">Recibimos los datos</h4>
+          <p data-i18n="method.step1.desc">Relevamos tus fuentes de información y objetivos de negocio.</p>
         </div>
         <div class="step">
           <span class="step-number">02</span>
-          <h4>Analizamos la información</h4>
-          <p>Aplicamos análisis descriptivo y diagnóstico con rigor profesional.</p>
+          <h4 data-i18n="method.step2.title">Analizamos la información</h4>
+          <p data-i18n="method.step2.desc">Aplicamos análisis descriptivo y diagnóstico con rigor profesional.</p>
         </div>
         <div class="step">
           <span class="step-number">03</span>
-          <h4>Creamos reportes claros</h4>
-          <p>Visualizaciones limpias, entendibles y alineadas a prioridades.</p>
+          <h4 data-i18n="method.step3.title">Creamos reportes claros</h4>
+          <p data-i18n="method.step3.desc">Visualizaciones limpias, entendibles y alineadas a prioridades.</p>
         </div>
         <div class="step">
           <span class="step-number">04</span>
-          <h4>Explicamos los resultados</h4>
-          <p>Interpretamos hallazgos y recomendamos acciones concretas.</p>
+          <h4 data-i18n="method.step4.title">Explicamos los resultados</h4>
+          <p data-i18n="method.step4.desc">Interpretamos hallazgos y recomendamos acciones concretas.</p>
         </div>
       </div>
     </div>
@@ -176,8 +181,8 @@
   <!-- Galería / Imágenes -->
   <section class="section" id="galeria">
     <div class="container">
-      <h3>Proyectos en acción</h3>
-      <p class="section-intro">Visualizaciones claras, reportes ejecutivos y tableros de control enfocados en resultados.</p>
+      <h3 data-i18n="gallery.title">Proyectos en acción</h3>
+      <p class="section-intro" data-i18n="gallery.intro">Visualizaciones claras, reportes ejecutivos y tableros de control enfocados en resultados.</p>
       <div class="gallery">
         <figure class="gallery-item">
           <img src="images/analytics-1.jpg" alt="Análisis de dashboards en laptop" />
@@ -198,19 +203,19 @@
   <!-- Para quién -->
   <section class="section" id="para-quien">
     <div class="container">
-      <h3>Para quién</h3>
+      <h3 data-i18n="forWhom.title">Para quién</h3>
       <div class="grid cards">
         <article class="card simple">
-          <h4>Empresas</h4>
-          <p>Mejoramos el control y la lectura de datos estratégicos.</p>
+          <h4 data-i18n="forWhom.card1.title">Empresas</h4>
+          <p data-i18n="forWhom.card1.desc">Mejoramos el control y la lectura de datos estratégicos.</p>
         </article>
         <article class="card simple">
-          <h4>Pymes</h4>
-          <p>Tomá decisiones con indicadores claros y objetivos.</p>
+          <h4 data-i18n="forWhom.card2.title">Pymes</h4>
+          <p data-i18n="forWhom.card2.desc">Tomá decisiones con indicadores claros y objetivos.</p>
         </article>
         <article class="card simple">
-          <h4>Comercios</h4>
-          <p>Detectá tendencias de ventas y optimizá tu operación.</p>
+          <h4 data-i18n="forWhom.card3.title">Comercios</h4>
+          <p data-i18n="forWhom.card3.desc">Detectá tendencias de ventas y optimizá tu operación.</p>
         </article>
       </div>
     </div>
@@ -219,37 +224,37 @@
   <!-- Experiencias de Uso -->
   <section class="section" id="experiencias">
     <div class="container">
-      <h3>Experiencias de uso</h3>
-      <p class="section-intro">Ejemplos ilustrativos de cómo nuestros servicios impactan positivamente en diferentes tipos de negocios.</p>
-      <p class="disclaimer">* Los testimonios que verás a continuación son ejemplos ilustrativos de uso y no representan clientes reales.</p>
+      <h3 data-i18n="experiences.title">Experiencias de uso</h3>
+      <p class="section-intro" data-i18n="experiences.intro">Ejemplos ilustrativos de cómo nuestros servicios impactan positivamente en diferentes tipos de negocios.</p>
+      <p class="disclaimer" data-i18n="experiences.disclaimer">* Los testimonios que verás a continuación son ejemplos ilustrativos de uso y no representan clientes reales.</p>
       
       <div class="testimonials-carousel">
         <div class="testimonial-item">
           <div class="testimonial-avatar">👤</div>
-          <p class="testimonial-text">"Ahora puedo cambiar textos y servicios sin depender de nadie. Mi web se actualiza al instante y todo funciona perfecto."</p>
-          <p class="testimonial-name">Cliente PyME</p>
-          <p class="testimonial-role">Propietario</p>
+          <p class="testimonial-text" data-i18n="experiences.testimonial1.text">"Ahora puedo cambiar textos y servicios sin depender de nadie. Mi web se actualiza al instante y todo funciona perfecto."</p>
+          <p class="testimonial-name" data-i18n="experiences.testimonial1.name">Cliente PyME</p>
+          <p class="testimonial-role" data-i18n="experiences.testimonial1.role">Propietario</p>
         </div>
 
         <div class="testimonial-item">
           <div class="testimonial-avatar">💼</div>
-          <p class="testimonial-text">"La web se ve profesional y funciona perfecto en el celular. Nuestros clientes están muy satisfechos con la experiencia."</p>
-          <p class="testimonial-name">Responsable de Ventas</p>
-          <p class="testimonial-role">E-commerce</p>
+          <p class="testimonial-text" data-i18n="experiences.testimonial2.text">"La web se ve profesional y funciona perfecto en el celular. Nuestros clientes están muy satisfechos con la experiencia."</p>
+          <p class="testimonial-name" data-i18n="experiences.testimonial2.name">Responsable de Ventas</p>
+          <p class="testimonial-role" data-i18n="experiences.testimonial2.role">E-commerce</p>
         </div>
 
         <div class="testimonial-item">
           <div class="testimonial-avatar">📊</div>
-          <p class="testimonial-text">"Tener estadísticas claras nos ayudó a entender mejor a nuestros clientes. Ahora sabemos exactamente qué funciona y qué no."</p>
-          <p class="testimonial-name">Analista Digital</p>
-          <p class="testimonial-role">Marketing</p>
+          <p class="testimonial-text" data-i18n="experiences.testimonial3.text">"Tener estadísticas claras nos ayudó a entender mejor a nuestros clientes. Ahora sabemos exactamente qué funciona y qué no."</p>
+          <p class="testimonial-name" data-i18n="experiences.testimonial3.name">Analista Digital</p>
+          <p class="testimonial-role" data-i18n="experiences.testimonial3.role">Marketing</p>
         </div>
 
         <div class="testimonial-item">
           <div class="testimonial-avatar">🚀</div>
-          <p class="testimonial-text">"El panel es muy intuitivo. Mi equipo aprendió a usarlo en minutos. Esto nos ahorró muchísimo tiempo y dinero en mantenimiento."</p>
-          <p class="testimonial-name">Gerente de IT</p>
-          <p class="testimonial-role">Mediana Empresa</p>
+          <p class="testimonial-text" data-i18n="experiences.testimonial4.text">"El panel es muy intuitivo. Mi equipo aprendió a usarlo en minutos. Esto nos ahorró muchísimo tiempo y dinero en mantenimiento."</p>
+          <p class="testimonial-name" data-i18n="experiences.testimonial4.name">Gerente de IT</p>
+          <p class="testimonial-role" data-i18n="experiences.testimonial4.role">Mediana Empresa</p>
         </div>
       </div>
 
@@ -266,12 +271,12 @@
   <section class="section contact" id="contacto">
     <div class="container contact-box">
       <div>
-        <h3>Contacto</h3>
-        <p>Escribinos y coordinamos una primera conversación para entender tu necesidad.</p>
+        <h3 data-i18n="contact.title">Contacto</h3>
+        <p data-i18n="contact.text">Escribinos y coordinamos una primera conversación para entender tu necesidad.</p>
       </div>
       <div class="contact-actions">
         <a class="btn btn-primary" href="https://www.instagram.com/axusanalytics/" target="_blank" rel="noopener">Instagram</a>
-        <a class="btn btn-primary" href="mailto:axusanalystics@gmail.com">Enviar correo</a>
+        <a class="btn btn-primary" href="mailto:axusanalystics@gmail.com" data-i18n="contact.email">Enviar correo</a>
       </div>
     </div>
   </section>
@@ -279,9 +284,12 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
-      <p>© 2026 Axus Analytics. Consultoría en análisis de datos.</p>
+      <p data-i18n="footer.text">© 2026 Axus Analytics. Consultoría en análisis de datos.</p>
     </div>
   </footer>
+
+  <!-- Script para cambio de idioma -->
+  <script src="language-switcher.js"></script>
 
   <!-- Script para Carrusel -->
   <script>
