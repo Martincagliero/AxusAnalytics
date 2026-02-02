@@ -29,6 +29,7 @@
         <a href="#servicios">Servicios</a>
         <a href="#web-editable">Web editable</a>
         <a href="#metodo">Cómo trabajamos</a>
+        <a href="#experiencias">Experiencias</a>
         <a href="#para-quien">Para quién</a>
         <a class="btn btn-outline" href="#contacto">Contactar</a>
       </nav>
@@ -215,6 +216,52 @@
     </div>
   </section>
 
+  <!-- Experiencias de Uso -->
+  <section class="section" id="experiencias">
+    <div class="container">
+      <h3>Experiencias de uso</h3>
+      <p class="section-intro">Ejemplos ilustrativos de cómo nuestros servicios impactan positivamente en diferentes tipos de negocios.</p>
+      <p class="disclaimer">* Los testimonios que verás a continuación son ejemplos ilustrativos de uso y no representan clientes reales.</p>
+      
+      <div class="testimonials-carousel">
+        <div class="testimonial-item">
+          <div class="testimonial-avatar">👤</div>
+          <p class="testimonial-text">"Ahora puedo cambiar textos y servicios sin depender de nadie. Mi web se actualiza al instante y todo funciona perfecto."</p>
+          <p class="testimonial-name">Cliente PyME</p>
+          <p class="testimonial-role">Propietario</p>
+        </div>
+
+        <div class="testimonial-item">
+          <div class="testimonial-avatar">💼</div>
+          <p class="testimonial-text">"La web se ve profesional y funciona perfecto en el celular. Nuestros clientes están muy satisfechos con la experiencia."</p>
+          <p class="testimonial-name">Responsable de Ventas</p>
+          <p class="testimonial-role">E-commerce</p>
+        </div>
+
+        <div class="testimonial-item">
+          <div class="testimonial-avatar">📊</div>
+          <p class="testimonial-text">"Tener estadísticas claras nos ayudó a entender mejor a nuestros clientes. Ahora sabemos exactamente qué funciona y qué no."</p>
+          <p class="testimonial-name">Analista Digital</p>
+          <p class="testimonial-role">Marketing</p>
+        </div>
+
+        <div class="testimonial-item">
+          <div class="testimonial-avatar">🚀</div>
+          <p class="testimonial-text">"El panel es muy intuitivo. Mi equipo aprendió a usarlo en minutos. Esto nos ahorró muchísimo tiempo y dinero en mantenimiento."</p>
+          <p class="testimonial-name">Gerente de IT</p>
+          <p class="testimonial-role">Mediana Empresa</p>
+        </div>
+      </div>
+
+      <div class="carousel-indicators">
+        <button class="indicator active" data-slide="0"></button>
+        <button class="indicator" data-slide="1"></button>
+        <button class="indicator" data-slide="2"></button>
+        <button class="indicator" data-slide="3"></button>
+      </div>
+    </div>
+  </section>
+
   <!-- Contacto -->
   <section class="section contact" id="contacto">
     <div class="container contact-box">
@@ -235,5 +282,40 @@
       <p>© 2026 Axus Analytics. Consultoría en análisis de datos.</p>
     </div>
   </footer>
+
+  <!-- Script para Carrusel -->
+  <script>
+    let currentSlide = 0;
+    const testimonials = document.querySelectorAll('.testimonial-item');
+    const indicators = document.querySelectorAll('.indicator');
+    const totalSlides = testimonials.length;
+
+    function showSlide(n) {
+      testimonials.forEach(item => item.classList.remove('active'));
+      indicators.forEach(indicator => indicator.classList.remove('active'));
+      
+      testimonials[n].classList.add('active');
+      indicators[n].classList.add('active');
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      showSlide(currentSlide);
+    }
+
+    // Cambiar slide cada 6 segundos
+    setInterval(nextSlide, 6000);
+
+    // Permitir click en indicadores
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => {
+        currentSlide = index;
+        showSlide(currentSlide);
+      });
+    });
+
+    // Mostrar primer slide
+    showSlide(0);
+  </script>
 </body>
 </html>
