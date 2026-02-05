@@ -9,6 +9,7 @@ const translations = {
     nav: {
       services: 'Servicios',
       webEditable: 'Web editable',
+      projects: 'Proyectos',
       method: 'Cómo trabajamos',
       experiences: 'Experiencias',
       forWhom: 'Para quién',
@@ -64,6 +65,20 @@ const translations = {
         desc: 'Deployment rápido y sin complicaciones'
       },
       cta: 'Contactanos'
+    },
+    projects: {
+      title: 'Nuestros proyectos',
+      intro: 'Trabajos reales que muestran cómo desarrollamos soluciones personalizadas para cada negocio.',
+      project1: {
+        title: 'Sistema de turnos online para barberías',
+        description: 'Sistema de turnos web desarrollado por AXUS. Publicado como referencia para mostrar cómo trabajamos. Cada implementación se adapta al negocio del cliente.',
+        benefit1: 'Agenda automática',
+        benefit2: 'Menos mensajes por WhatsApp',
+        benefit3: 'Mejor organización de turnos',
+        benefit4: 'Experiencia profesional para el cliente',
+        cta1: 'Ver sistema funcionando',
+        cta2: 'Contactanos para uno igual'
+      }
     },
     method: {
       title: 'Cómo trabajamos',
@@ -141,6 +156,7 @@ const translations = {
     nav: {
       services: 'Services',
       webEditable: 'Editable website',
+      projects: 'Projects',
       method: 'How we work',
       experiences: 'Experiences',
       forWhom: 'For whom',
@@ -196,6 +212,20 @@ const translations = {
         desc: 'Fast deployment without complications'
       },
       cta: 'Contact us'
+    },
+    projects: {
+      title: 'Our projects',
+      intro: 'Real work that shows how we develop customized solutions for each business.',
+      project1: {
+        title: 'Online appointment system for barbershops',
+        description: 'Web appointment system developed by AXUS. Published as a reference to show how we work. Each implementation is adapted to the client\'s business.',
+        benefit1: 'Automatic scheduling',
+        benefit2: 'Fewer WhatsApp messages',
+        benefit3: 'Better appointment organization',
+        benefit4: 'Professional experience for the client',
+        cta1: 'See working system',
+        cta2: 'Contact us for a similar one'
+      }
     },
     method: {
       title: 'How we work',
