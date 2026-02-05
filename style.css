@@ -211,6 +211,7 @@ a {
   font-weight: 700;
   letter-spacing: 0.2px;
   color: var(--primary);
+  margin-right: 48px;
 }
 
 .logo img {
