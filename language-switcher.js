@@ -12,7 +12,7 @@ const translations = {
       projects: 'Proyectos',
       method: 'Cómo trabajamos',
       experiences: 'Experiencias',
-      forWhom: 'Sobre Axus',
+      forWhom: 'Para quién',
       contact: 'Contactar'
     },
     hero: {
@@ -122,7 +122,7 @@ const translations = {
       intro: 'Visualizaciones claras, reportes ejecutivos y tableros de control enfocados en resultados.'
     },
     forWhom: {
-      title: 'Sobre Axus',
+      title: 'Para quién',
       card1: {
         title: 'Emprendedores',
         desc: 'Tu marca personal online con diseño profesional y panel editable.'
@@ -177,7 +177,7 @@ const translations = {
       projects: 'Projects',
       method: 'How we work',
       experiences: 'Experiences',
-      forWhom: 'About Axus',
+      forWhom: 'For whom',
       contact: 'Contact'
     },
     hero: {
@@ -287,7 +287,7 @@ const translations = {
       intro: 'Clear visualizations, executive reports and results-focused dashboards.'
     },
     forWhom: {
-      title: 'About Axus',
+      title: 'For whom',
       card1: {
         title: 'Entrepreneurs',
         desc: 'Your personal brand online with professional design and editable panel.'
