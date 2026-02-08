@@ -16,33 +16,41 @@ const translations = {
       contact: 'Contactar'
     },
     hero: {
-      eyebrow: 'Consultoría en datos',
-      subtitle: 'Análisis de datos para empresas',
-      lead: 'Transformamos información en decisiones claras.',
-      cta: 'Contactar',
-      metric1: 'Eficiencia operativa',
-      metric2: 'Monitoreo clave',
-      metric3Title: 'Ventas',
-      metric3: 'Optimización comercial'
+      eyebrow: 'Desarrollo Web Profesional',
+      subtitle: 'Creamos sitios web modernos que impulsan tu negocio',
+      lead: 'Páginas web profesionales, rápidas y pensadas para vender. Llevá tu negocio online en días.',
+      cta: 'Pedí tu web',
+      metric1Title: 'Tu web',
+      metric1Value: 'Online',
+      metric1: 'En pocos días',
+      metric2Title: 'Mobile',
+      metric2: 'Responsive',
+      metric3Title: 'Panel',
+      metric3Value: 'Fácil',
+      metric3: '100% editable'
     },
     services: {
       title: 'Servicios',
-      intro: 'Soluciones claras y accionables para entender y mejorar el rendimiento de tu negocio.',
+      intro: 'Soluciones web profesionales para que tu negocio destaque online y llegue a más clientes.',
       card1: {
-        title: 'Análisis de ventas',
-        desc: 'Identificamos patrones, oportunidades y variaciones clave para potenciar ingresos.'
+        title: 'Páginas web institucionales',
+        desc: 'Tu negocio con presencia profesional online. Ideal para barberías, estudios, marcas personales y emprendimientos.'
       },
       card2: {
-        title: 'Análisis de gastos',
-        desc: 'Detectamos ineficiencias y optimizamos costos con base en datos reales.'
+        title: 'Landing pages',
+        desc: 'Páginas diseñadas para convertir visitas en clientes. Perfectas para servicios, productos y campañas.'
       },
       card3: {
-        title: 'Indicadores clave (KPIs)',
-        desc: 'Definimos y monitoreamos métricas esenciales para decisiones rápidas.'
+        title: 'Catálogos online',
+        desc: 'Mostrá tus productos y servicios online. Tus clientes pueden ver todo desde el celular, 24/7.'
       },
       card4: {
-        title: 'Reportes claros y accionables',
-        desc: 'Entregamos reportes simples, precisos y enfocados en resultados.'
+        title: 'Sistemas de turnos web',
+        desc: 'Agenda automática para tu negocio. Menos mensajes por WhatsApp, mejor organización.'
+      },
+      card5: {
+        title: 'Analítica y automatización',
+        desc: 'Valor agregado: reportes de visitas, análisis de datos y automatizaciones para escalar tu negocio.'
       }
     },
     webEditable: {
@@ -83,20 +91,20 @@ const translations = {
     method: {
       title: 'Cómo trabajamos',
       step1: {
-        title: 'Recibimos los datos',
-        desc: 'Relevamos tus fuentes de información y objetivos de negocio.'
+        title: 'Entendemos tu negocio',
+        desc: 'Conversamos sobre tu negocio, tus clientes y qué necesitás mostrar online.'
       },
       step2: {
-        title: 'Analizamos la información',
-        desc: 'Aplicamos análisis descriptivo y diagnóstico con rigor profesional.'
+        title: 'Diseñamos tu web',
+        desc: 'Creamos un diseño profesional adaptado a tu marca y optimizado para celulares.'
       },
       step3: {
-        title: 'Creamos reportes claros',
-        desc: 'Visualizaciones limpias, entendibles y alineadas a prioridades.'
+        title: 'Publicamos y enseñamos',
+        desc: 'Subimos tu web y te mostramos cómo editar textos e imágenes fácilmente.'
       },
       step4: {
-        title: 'Explicamos los resultados',
-        desc: 'Interpretamos hallazgos y recomendamos acciones concretas.'
+        title: 'Soporte continuo',
+        desc: 'Estamos disponibles para actualizaciones, mejoras y analizar resultados.'
       }
     },
     gallery: {
@@ -106,16 +114,16 @@ const translations = {
     forWhom: {
       title: 'Sobre Axus',
       card1: {
-        title: 'Empresas',
-        desc: 'Mejoramos el control y la lectura de datos estratégicos.'
+        title: 'Emprendedores',
+        desc: 'Tu marca personal online con diseño profesional y panel editable.'
       },
       card2: {
-        title: 'Pymes',
-        desc: 'Tomá decisiones con indicadores claros y objetivos.'
+        title: 'Negocios locales',
+        desc: 'Barberías, costureras, estudios: mostrá tus servicios 24/7 desde el celular.'
       },
       card3: {
-        title: 'Comercios',
-        desc: 'Detectá tendencias de ventas y optimizá tu operación.'
+        title: 'Comercios y PYMEs',
+        desc: 'Catálogos online, sistemas de turnos y automatizaciones inteligentes.'
       }
     },
     experiences: {
@@ -123,33 +131,33 @@ const translations = {
       intro: 'Ejemplos ilustrativos de cómo nuestros servicios impactan positivamente en diferentes tipos de negocios.',
       disclaimer: '* Los testimonios que verás a continuación son ejemplos ilustrativos de uso y no representan clientes reales.',
       testimonial1: {
-        text: '"Ahora puedo cambiar textos y servicios sin depender de nadie. Mi web se actualiza al instante y todo funciona perfecto."',
-        name: 'Cliente PyME',
+        text: '"Ahora mis clientes pueden reservar turnos directo desde mi web. Se redujo un 80% los mensajes de WhatsApp para agendar."',
+        name: 'Barbería Local',
         role: 'Propietario'
       },
       testimonial2: {
-        text: '"La web se ve profesional y funciona perfecto en el celular. Nuestros clientes están muy satisfechos con la experiencia."',
-        name: 'Responsable de Ventas',
-        role: 'E-commerce'
+        text: '"Mi catálogo online funciona perfecto. Los clientes ven mis trabajos desde el celular y me llegan más consultas por Instagram."',
+        name: 'Estudio de Moda',
+        role: 'Emprendedora'
       },
       testimonial3: {
-        text: '"Tener estadísticas claras nos ayudó a entender mejor a nuestros clientes. Ahora sabemos exactamente qué funciona y qué no."',
-        name: 'Analista Digital',
-        role: 'Marketing'
+        text: '"Además de la web, agregamos estadísticas. Ahora sabemos qué servicios son los más consultados y ajustamos nuestras promociones."',
+        name: 'Centro de Estética',
+        role: 'Responsable de Marketing'
       },
       testimonial4: {
-        text: '"El panel es muy intuitivo. Mi equipo aprendió a usarlo en minutos. Esto nos ahorró muchísimo tiempo y dinero en mantenimiento."',
-        name: 'Gerente de IT',
-        role: 'Mediana Empresa'
+        text: '"El panel es súper intuitivo. Cambio precios y fotos sin llamar a nadie. Mi web siempre está actualizada."',
+        name: 'Estudio Contable',
+        role: 'PyME'
       }
     },
     contact: {
       title: 'Contacto',
-      text: 'Escribinos y coordinamos una primera conversación para entender tu necesidad.',
-      email: 'Enviar correo'
+      text: 'Escribinos y coordinamos una primera charla para entender tu proyecto web.',
+      email: 'Pedí tu web'
     },
     footer: {
-      text: '© 2026 Axus Analytics. Consultoría en análisis de datos.'
+      text: '© 2026 Axus. Desarrollo web profesional con automatización inteligente.'
     }
   },
   en: {
@@ -163,33 +171,41 @@ const translations = {
       contact: 'Contact'
     },
     hero: {
-      eyebrow: 'Data consulting',
-      subtitle: 'Data analysis for businesses',
-      lead: 'We transform information into clear decisions.',
-      cta: 'Contact',
-      metric1: 'Operational efficiency',
-      metric2: 'Key monitoring',
-      metric3Title: 'Sales',
-      metric3: 'Commercial optimization'
+      eyebrow: 'Professional Web Development',
+      subtitle: 'We create modern websites that boost your business',
+      lead: 'Professional, fast websites designed to sell. Take your business online in days.',
+      cta: 'Get your website',
+      metric1Title: 'Your web',
+      metric1Value: 'Online',
+      metric1: 'In a few days',
+      metric2Title: 'Mobile',
+      metric2: 'Responsive',
+      metric3Title: 'Panel',
+      metric3Value: 'Easy',
+      metric3: '100% editable'
     },
     services: {
       title: 'Services',
-      intro: 'Clear and actionable solutions to understand and improve your business performance.',
+      intro: 'Professional web solutions so your business stands out online and reaches more customers.',
       card1: {
-        title: 'Sales analysis',
-        desc: 'We identify patterns, opportunities and key variations to boost revenue.'
+        title: 'Institutional websites',
+        desc: 'Your business with professional online presence. Ideal for barbershops, studios, personal brands and ventures.'
       },
       card2: {
-        title: 'Expense analysis',
-        desc: 'We detect inefficiencies and optimize costs based on real data.'
+        title: 'Landing pages',
+        desc: 'Pages designed to convert visits into customers. Perfect for services, products and campaigns.'
       },
       card3: {
-        title: 'Key Performance Indicators (KPIs)',
-        desc: 'We define and monitor essential metrics for quick decisions.'
+        title: 'Online catalogs',
+        desc: 'Show your products and services online. Your customers can see everything from their phone, 24/7.'
       },
       card4: {
-        title: 'Clear and actionable reports',
-        desc: 'We deliver simple, accurate and results-focused reports.'
+        title: 'Web appointment systems',
+        desc: 'Automatic scheduling for your business. Fewer WhatsApp messages, better organization.'
+      },
+      card5: {
+        title: 'Analytics and automation',
+        desc: 'Added value: visit reports, data analysis and automations to scale your business.'
       }
     },
     webEditable: {
@@ -230,20 +246,20 @@ const translations = {
     method: {
       title: 'How we work',
       step1: {
-        title: 'We receive the data',
-        desc: 'We survey your information sources and business objectives.'
+        title: 'We understand your business',
+        desc: 'We talk about your business, your customers and what you need to show online.'
       },
       step2: {
-        title: 'We analyze the information',
-        desc: 'We apply descriptive and diagnostic analysis with professional rigor.'
+        title: 'We design your website',
+        desc: 'We create a professional design adapted to your brand and optimized for mobile.'
       },
       step3: {
-        title: 'We create clear reports',
-        desc: 'Clean, understandable visualizations aligned with priorities.'
+        title: 'We publish and teach',
+        desc: 'We upload your website and show you how to easily edit texts and images.'
       },
       step4: {
-        title: 'We explain the results',
-        desc: 'We interpret findings and recommend concrete actions.'
+        title: 'Continuous support',
+        desc: 'We are available for updates, improvements and results analysis.'
       }
     },
     gallery: {
@@ -253,16 +269,16 @@ const translations = {
     forWhom: {
       title: 'About Axus',
       card1: {
-        title: 'Companies',
-        desc: 'We improve the control and interpretation of strategic data.'
+        title: 'Entrepreneurs',
+        desc: 'Your personal brand online with professional design and editable panel.'
       },
       card2: {
-        title: 'SMEs',
-        desc: 'Make decisions with clear and objective indicators.'
+        title: 'Local businesses',
+        desc: 'Barbershops, seamstresses, studios: show your services 24/7 from mobile.'
       },
       card3: {
-        title: 'Retail businesses',
-        desc: 'Detect sales trends and optimize your operation.'
+        title: 'Retail & SMEs',
+        desc: 'Online catalogs, appointment systems and intelligent automations.'
       }
     },
     experiences: {
@@ -270,33 +286,33 @@ const translations = {
       intro: 'Illustrative examples of how our services positively impact different types of businesses.',
       disclaimer: '* The following testimonials are illustrative examples and do not represent real clients.',
       testimonial1: {
-        text: '"Now I can change texts and services without depending on anyone. My website updates instantly and everything works perfectly."',
-        name: 'SME Client',
+        text: '"Now my clients can book appointments directly from my website. WhatsApp messages for scheduling reduced by 80%."',
+        name: 'Local Barbershop',
         role: 'Owner'
       },
       testimonial2: {
-        text: '"The website looks professional and works perfectly on mobile. Our customers are very satisfied with the experience."',
-        name: 'Sales Manager',
-        role: 'E-commerce'
+        text: '"My online catalog works perfectly. Clients see my work from their phones and I get more inquiries on Instagram."',
+        name: 'Fashion Studio',
+        role: 'Entrepreneur'
       },
       testimonial3: {
-        text: '"Having clear statistics helped us better understand our customers. Now we know exactly what works and what doesn\'t."',
-        name: 'Digital Analyst',
-        role: 'Marketing'
+        text: '"In addition to the website, we added statistics. Now we know which services are most requested and adjust our promotions."',
+        name: 'Beauty Center',
+        role: 'Marketing Manager'
       },
       testimonial4: {
-        text: '"The panel is very intuitive. My team learned to use it in minutes. This saved us a lot of time and money on maintenance."',
-        name: 'IT Manager',
-        role: 'Medium Company'
+        text: '"The panel is super intuitive. I change prices and photos without calling anyone. My website is always updated."',
+        name: 'Accounting Firm',
+        role: 'SME'
       }
     },
     contact: {
       title: 'Contact',
-      text: 'Write to us and we will coordinate a first conversation to understand your needs.',
-      email: 'Send email'
+      text: 'Write to us and we will coordinate a first conversation to understand your web project.',
+      email: 'Get your website'
     },
     footer: {
-      text: '© 2026 Axus Analytics. Data analysis consulting.'
+      text: '© 2026 Axus. Professional web development with intelligent automation.'
     }
   }
 };
