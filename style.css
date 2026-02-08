@@ -282,8 +282,8 @@ a {
 }
 
 .logo img {
-  width: 36px;
-  height: 36px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
   filter: drop-shadow(0 4px 12px rgba(0, 212, 255, 0.4));
 }
