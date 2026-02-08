@@ -647,6 +647,8 @@ a {
   color: var(--text-muted);
   font-weight: 600;
   animation: fadeInOut 2s ease-in-out infinite;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .scroll-arrow {
