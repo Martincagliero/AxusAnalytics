@@ -224,6 +224,20 @@ a {
   letter-spacing: -0.5px;
 }
 
+.section-header {
+  max-width: 800px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.section-header h3 {
+  margin-bottom: 20px;
+}
+
+.section-header .section-intro {
+  margin: 0 auto;
+}
+
 .section-intro {
   max-width: 700px;
   color: var(--text-secondary);
@@ -534,6 +548,43 @@ a {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 
+/* Hero Content Centered */
+.hero-content-centered {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-content-centered .eyebrow,
+.hero-content-centered h1,
+.hero-content-centered h2,
+.hero-content-centered .lead {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-content-centered h2 {
+  max-width: 700px;
+}
+
+.hero-content-centered .lead {
+  max-width: 600px;
+}
+
+.hero-content-centered .hero-cta {
+  display: flex;
+  justify-content: center;
+}
+
+/* Hero Metrics */
+.hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 900px;
+  margin: 48px auto 0;
+}
+
 .hero-content {
   max-width: 600px;
 }
@@ -713,7 +764,9 @@ a {
 }
 
 .cards {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .card-premium {
@@ -794,6 +847,28 @@ a {
 
 .card-premium:hover .card-icon {
   transform: scale(1.1) rotate(5deg);
+}
+
+/* Card Number - Professional Style */
+.card-number {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--blue-cyan);
+  background: rgba(6, 182, 212, 0.1);
+  border: 2px solid rgba(6, 182, 212, 0.3);
+  border-radius: 8px;
+  padding: 6px 14px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  transition: all var(--transition-base);
+}
+
+.card-premium:hover .card-number {
+  background: rgba(6, 182, 212, 0.2);
+  border-color: var(--blue-cyan);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
 }
 
 .card-premium h4 {
@@ -1311,6 +1386,15 @@ a {
 
   .hero-grid {
     gap: 40px;
+  }
+
+  .hero-metrics {
+    grid-template-columns: 1fr;
+    margin-top: 40px;
+  }
+
+  .hero-content-centered h1 {
+    font-size: 2.5rem;
   }
 
   .section h3 {
