@@ -99,6 +99,16 @@ const translations = {
         benefit4: 'Optimizado para móviles',
         cta1: 'Ver sitio web',
         cta2: 'Creá tu web'
+      },
+      project3: {
+        title: 'Portfolio profesional para diseñador web',
+        description: 'Portafolio web desarrollado por AXUS para profesionales creativos. Muestra trabajos de forma visual, incluye información profesional y facilita el contacto con potenciales clientes.',
+        benefit1: 'Showcase visual de proyectos',
+        benefit2: 'Diseño moderno y profesional',
+        benefit3: 'Sección sobre mí personalizada',
+        benefit4: '100% responsive y rápido',
+        cta1: 'Ver portfolio',
+        cta2: 'Creá tu portfolio'
       }
     },
     method: {
@@ -267,6 +277,16 @@ const translations = {
         benefit4: 'Mobile optimized',
         cta1: 'See website',
         cta2: 'Create your website'
+      },
+      project3: {
+        title: 'Professional portfolio for web designer',
+        description: 'Web portfolio developed by AXUS for creative professionals. Visually showcases work, includes professional information and facilitates contact with potential clients.',
+        benefit1: 'Visual project showcase',
+        benefit2: 'Modern and professional design',
+        benefit3: 'Personalized about me section',
+        benefit4: '100% responsive and fast',
+        cta1: 'See portfolio',
+        cta2: 'Create your portfolio'
       }
     },
     method: {
