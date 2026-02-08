@@ -86,6 +86,16 @@ const translations = {
         benefit4: 'Experiencia profesional para el cliente',
         cta1: 'Ver sistema funcionando',
         cta2: 'Contactanos para uno igual'
+      },
+      project2: {
+        title: 'Web para artista textil - Casi como ella',
+        description: 'Sitio web desarrollado por AXUS para artista textil. Incluye galería de trabajos, sección sobre la artista y contacto directo. Diseño personalizado que refleja la identidad artística del emprendimiento.',
+        benefit1: 'Galería visual de trabajos',
+        benefit2: 'Diseño personalizado único',
+        benefit3: 'Contacto directo por WhatsApp',
+        benefit4: 'Optimizado para móviles',
+        cta1: 'Ver sitio web',
+        cta2: 'Creá tu web'
       }
     },
     method: {
@@ -241,6 +251,16 @@ const translations = {
         benefit4: 'Professional experience for the client',
         cta1: 'See working system',
         cta2: 'Contact us for a similar one'
+      },
+      project2: {
+        title: 'Website for textile artist - Casi como ella',
+        description: 'Website developed by AXUS for a textile artist. Includes gallery of works, about the artist section and direct contact. Custom design that reflects the artistic identity of the business.',
+        benefit1: 'Visual gallery of works',
+        benefit2: 'Unique custom design',
+        benefit3: 'Direct WhatsApp contact',
+        benefit4: 'Mobile optimized',
+        cta1: 'See website',
+        cta2: 'Create your website'
       }
     },
     method: {
