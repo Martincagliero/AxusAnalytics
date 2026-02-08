@@ -464,11 +464,13 @@ a {
 
 /* ===== HERO SECTION ===== */
 .hero {
-  min-height: 100vh;
+  min-height: 120vh;
+  height: 120vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 140px 0 100px;
+  padding: 0;
   position: relative;
   overflow: hidden;
 }
@@ -481,6 +483,14 @@ a {
   height: 100%;
   overflow: hidden;
   z-index: 0;
+  background: linear-gradient(
+    135deg,
+    #0a1628 0%,
+    #0d1f3d 25%,
+    #122a4a 50%,
+    #0e2848 75%,
+    #0a1628 100%
+  );
 }
 
 #particlesCanvas {
@@ -548,41 +558,125 @@ a {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 
-/* Hero Content Centered */
-.hero-content-centered {
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
+/* Hero Wrapper */
+.hero-wrapper {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  width: 100%;
+  padding: 0 20px;
 }
 
-.hero-content-centered .eyebrow,
-.hero-content-centered h1,
-.hero-content-centered h2,
-.hero-content-centered .lead {
+/* Hero Content Main */
+.hero-content-main {
+  max-width: 1000px;
+  width: 100%;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero-eyebrow {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--blue-cyan);
+  margin-bottom: 30px;
+  font-weight: 700;
+  display: block;
+}
+
+.hero-title {
+  font-size: clamp(5rem, 4rem + 8vw, 9rem);
+  color: var(--white);
+  margin-bottom: 40px;
+  font-weight: 900;
+  letter-spacing: -3px;
+  line-height: 0.95;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.4rem, 1.1rem + 1.2vw, 2rem);
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+  line-height: 1.5;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.hero-content-centered h2 {
+.hero-description {
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.3rem);
+  color: var(--text-muted);
+  margin-bottom: 50px;
+  line-height: 1.8;
   max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.hero-content-centered .lead {
-  max-width: 600px;
-}
-
-.hero-content-centered .hero-cta {
+.hero-cta-wrapper {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-/* Hero Metrics */
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.scroll-text {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  font-weight: 600;
+  animation: fadeInOut 2s ease-in-out infinite;
+}
+
+.scroll-arrow {
+  width: 24px;
+  height: 24px;
+  color: var(--blue-cyan);
+  animation: bounceDown 2s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes bounceDown {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 1;
+  }
+}
+
+/* Hero Metrics (oculto en nuevo diseño) */
 .hero-metrics {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-  max-width: 900px;
-  margin: 48px auto 0;
+  display: none;
 }
 
 .hero-content {
@@ -649,10 +743,6 @@ a {
   color: var(--text-muted);
   margin-bottom: 32px;
   line-height: 1.8;
-}
-
-.hero-cta {
-  margin-top: 32px;
 }
 
 /* Hero Card */
@@ -1538,8 +1628,48 @@ a {
   }
 
   .hero {
-    padding: 120px 0 80px;
-    min-height: auto;
+    min-height: 100vh;
+    height: 100vh;
+    padding: 0;
+  }
+
+  .hero-content-main {
+    padding: 40px 20px;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 2.5rem + 5vw, 4rem);
+    margin-bottom: 25px;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 0.9rem + 1vw, 1.4rem);
+    margin-bottom: 20px;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+    margin-bottom: 35px;
+  }
+
+  .scroll-indicator {
+    bottom: 30px;
+  }
+
+  .scroll-text {
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+  }
+
+  .scroll-arrow {
+    width: 20px;
+    height: 20px;
   }
 
   .hero-grid {
@@ -1549,6 +1679,7 @@ a {
   .hero-metrics {
     grid-template-columns: 1fr;
     margin-top: 40px;
+    display: none;
   }
 
   .hero-content-centered h1 {

@@ -19,7 +19,7 @@ const translations = {
       eyebrow: 'Desarrollo Web Profesional',
       subtitle: 'Creamos sitios web modernos que impulsan tu negocio',
       lead: 'Páginas web profesionales, rápidas y pensadas para vender. Llevá tu negocio online en días.',
-      cta: 'Pedí tu web',
+      cta: 'Ver trabajos',
       metric1Title: 'Tu web',
       metric1Value: 'Online',
       metric1: 'En pocos días',
@@ -28,6 +28,9 @@ const translations = {
       metric3Title: 'Panel',
       metric3Value: 'Fácil',
       metric3: '100% editable'
+    },
+    scroll: {
+      text: 'Deslizá para explorar'
     },
     services: {
       title: 'Servicios',
@@ -184,7 +187,7 @@ const translations = {
       eyebrow: 'Professional Web Development',
       subtitle: 'We create modern websites that boost your business',
       lead: 'Professional, fast websites designed to sell. Take your business online in days.',
-      cta: 'Get your website',
+      cta: 'See work',
       metric1Title: 'Your web',
       metric1Value: 'Online',
       metric1: 'In a few days',
@@ -193,6 +196,9 @@ const translations = {
       metric3Title: 'Panel',
       metric3Value: 'Easy',
       metric3: '100% editable'
+    },
+    scroll: {
+      text: 'Scroll to explore'
     },
     services: {
       title: 'Services',
