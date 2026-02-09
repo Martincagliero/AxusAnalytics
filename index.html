@@ -19,6 +19,10 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Cursor Personalizado Premium -->
+  <div class="custom-cursor"></div>
+  <div class="cursor-dot"></div>
+  
   <!-- Loader Premium -->
   <div class="page-loader">
     <div class="loader-content">
@@ -808,6 +812,89 @@
     function showFeedback(type) {
       feedbackDiv.className = `form-feedback show-${type}`;
     }
+  </script>
+
+  <!-- Script para Cursor Personalizado Premium -->
+  <script>
+    const customCursor = document.querySelector('.custom-cursor');
+    const cursorDot = document.querySelector('.cursor-dot');
+    let cursorX = 0;
+    let cursorY = 0;
+    let targetX = 0;
+    let targetY = 0;
+    const easeAmount = 0.15;
+
+    // Actualizar posición del cursor al mover el mouse
+    document.addEventListener('mousemove', (e) => {
+      targetX = e.clientX;
+      targetY = e.clientY;
+    });
+
+    // Animar el cursor con easing suave
+    function animateCursor() {
+      cursorX += (targetX - cursorX) * easeAmount;
+      cursorY += (targetY - cursorY) * easeAmount;
+
+      customCursor.style.left = cursorX + 'px';
+      customCursor.style.top = cursorY + 'px';
+
+      // Dot mucho más cercano al cursor
+      const dotEase = 0.7;
+      const dotX = cursorX + (targetX - cursorX) * (1 - dotEase);
+      const dotY = cursorY + (targetY - cursorY) * (1 - dotEase);
+      
+      cursorDot.style.left = targetX + 'px';
+      cursorDot.style.top = targetY + 'px';
+
+      requestAnimationFrame(animateCursor);
+    }
+
+    // Iniciar animación del cursor
+    animateCursor();
+
+    // Elementos que activan el cursor grande
+    const interactiveElements = document.querySelectorAll(
+      'a, button, .btn, .btn-primary, .btn-outline, [role="button"], input[type="submit"]'
+    );
+
+    // Agregar listeners para hover
+    interactiveElements.forEach((element) => {
+      element.addEventListener('mouseenter', () => {
+        // Verificar si es un link o un botón
+        if (element.tagName === 'A' || element.classList.contains('btn-instagram')) {
+          customCursor.classList.add('link-hover');
+          customCursor.classList.remove('active');
+        } else {
+          customCursor.classList.add('active');
+          customCursor.classList.remove('link-hover');
+        }
+      });
+
+      element.addEventListener('mouseleave', () => {
+        customCursor.classList.remove('active', 'link-hover');
+      });
+    });
+
+    // Ocultar cursor al salir de la ventana
+    document.addEventListener('mouseleave', () => {
+      customCursor.style.opacity = '0';
+      cursorDot.style.opacity = '0';
+    });
+
+    // Mostrar cursor al entrar
+    document.addEventListener('mouseenter', () => {
+      customCursor.style.opacity = '1';
+      cursorDot.style.opacity = '1';
+    });
+
+    // Efecto visual al hacer click
+    document.addEventListener('mousedown', () => {
+      customCursor.style.transform = 'scale(0.85)';
+    });
+
+    document.addEventListener('mouseup', () => {
+      customCursor.style.transform = 'scale(1)';
+    });
   </script>
 </body>
 </html>
