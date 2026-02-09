@@ -1657,41 +1657,71 @@ a {
 }
 
 /* ===== LOCATION / UBICACIÓN ===== */
-.map-container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 20px;
+/* ===== WIDGET DE UBICACIÓN ===== */
+.map-widget-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
 
-.map-wrapper {
-  position: relative;
+.map-widget {
+  max-width: 380px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: 
-    0 20px 60px rgba(0, 0, 0, 0.4),
-    0 0 40px rgba(0, 212, 255, 0.1);
-  border: 1px solid rgba(0, 212, 255, 0.2);
-  background: var(--surface);
+    0 10px 30px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(0, 212, 255, 0.08);
   transition: all var(--transition-base);
 }
 
-.map-wrapper:hover {
+.map-widget:hover {
   box-shadow: 
-    0 24px 72px rgba(0, 0, 0, 0.5),
-    0 0 60px rgba(0, 212, 255, 0.15);
+    0 14px 40px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(0, 212, 255, 0.12);
   transform: translateY(-4px);
 }
 
-.map-wrapper iframe {
+.map-widget-frame {
+  width: 100%;
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+}
+
+.map-widget-frame iframe {
   display: block;
   width: 100%;
-  height: 450px;
-  filter: grayscale(0.3) contrast(1.1);
+  height: 100%;
+  filter: grayscale(0.2) contrast(1.1);
   transition: filter var(--transition-base);
 }
 
-.map-wrapper:hover iframe {
+.map-widget:hover .map-widget-frame iframe {
   filter: grayscale(0) contrast(1.15);
+}
+
+.map-widget-info {
+  padding: 20px 24px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.03);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.map-location {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0 0 8px 0;
+}
+
+.map-remote {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 0;
 }
 
 /* ===== CONTACT ===== */
@@ -1982,12 +2012,13 @@ a {
   }
 
   /* Ubicación - Mobile */
-  .map-container {
-    padding: 0;
+  .map-widget {
+    max-width: 100%;
+    margin: 0 16px;
   }
 
-  .map-wrapper iframe {
-    height: 350px;
+  .map-widget-frame {
+    height: 200px;
   }
 
   /* Proyectos Carousel - Mobile */
