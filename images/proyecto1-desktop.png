@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600">
+  <!-- Fondo degradado -->
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f2847;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a3a5c;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="900" height="600" fill="url(#grad1)"/>
+  
+  <!-- Marco del mockup -->
+  <rect x="40" y="40" width="820" height="520" rx="20" fill="rgba(255,255,255,0.03)" stroke="rgba(0,212,255,0.2)" stroke-width="2"/>
+  
+  <!-- Área de contenido -->
+  <rect x="60" y="60" width="780" height="480" rx="16" fill="rgba(10,22,40,0.5)"/>
+  
+  <!-- Líneas decorativas -->
+  <line x1="80" y1="100" x2="820" y2="100" stroke="rgba(0,212,255,0.15)" stroke-width="1"/>
+  <line x1="80" y1="140" x2="820" y2="140" stroke="rgba(0,212,255,0.1)" stroke-width="1"/>
+  <line x1="80" y1="180" x2="600" y2="180" stroke="rgba(0,212,255,0.1)" stroke-width="1"/>
+  
+  <!-- Rectángulos simulando contenido -->
+  <rect x="80" y="240" width="320" height="200" rx="12" fill="rgba(0,212,255,0.08)" stroke="rgba(0,212,255,0.15)" stroke-width="1"/>
+  <rect x="420" y="240" width="320" height="200" rx="12" fill="rgba(0,212,255,0.08)" stroke="rgba(0,212,255,0.15)" stroke-width="1"/>
+  
+  <!-- Texto placeholder -->
+  <text x="450" y="380" font-family="Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="24" font-weight="bold" fill="rgba(255,255,255,0.4)" text-anchor="middle">
+    Subí tu mockup aquí
+  </text>
+  
+  <!-- Subtexto -->
+  <text x="450" y="420" font-family="Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="14" fill="rgba(255,255,255,0.3)" text-anchor="middle">
+    Formato PNG/JPG (fondo transparente preferido)
+  </text>
+  
+  <!-- Elemento decorativo con glow -->
+  <circle cx="450" cy="300" r="3" fill="rgba(0,212,255,0.6)" filter="url(#glow)"/>
+  <circle cx="350" cy="350" r="2" fill="rgba(0,212,255,0.4)" filter="url(#glow)"/>
+  <circle cx="550" cy="320" r="2" fill="rgba(0,212,255,0.4)" filter="url(#glow)"/>
+</svg>
