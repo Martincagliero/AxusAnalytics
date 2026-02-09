@@ -444,37 +444,63 @@
       </div>
       
       <div class="contact-form-wrapper">
-        <form id="contactForm" class="contact-form" action="https://formspree.io/f/mjgekgjg" method="POST">
-          <div class="form-group">
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+        <form id="contactForm" class="contact-form premium-form" action="https://formspree.io/f/mjgekgjg" method="POST">
+          <div class="form-group floating-label" style="animation-delay: 0.1s">
+            <input type="text" id="nombre" name="nombre" required class="form-input" autocomplete="name">
+            <label for="nombre" class="form-label">Nombre</label>
+            <div class="input-glow"></div>
           </div>
           
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required placeholder="tu@email.com">
+          <div class="form-group floating-label" style="animation-delay: 0.2s">
+            <input type="email" id="email" name="email" required class="form-input" autocomplete="email">
+            <label for="email" class="form-label">Email</label>
+            <div class="input-glow"></div>
           </div>
           
-          <div class="form-group">
-            <label for="mensaje">Mensaje</label>
-            <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Contanos sobre tu proyecto..."></textarea>
+          <div class="form-group floating-label" style="animation-delay: 0.3s">
+            <textarea id="mensaje" name="mensaje" rows="5" required class="form-input form-textarea"></textarea>
+            <label for="mensaje" class="form-label">Mensaje</label>
+            <div class="input-glow"></div>
           </div>
           
-          <button type="submit" class="btn btn-primary btn-submit">
-            <span class="btn-text">Enviar mensaje</span>
-            <span class="btn-loading" style="display: none;">Enviando...</span>
+          <button type="submit" class="btn-premium btn-submit" style="animation-delay: 0.4s">
+            <span class="btn-gradient"></span>
+            <span class="btn-content">
+              <span class="btn-text">Enviar mensaje</span>
+              <span class="btn-loading">
+                <span class="loading-spinner"></span>
+                Enviando...
+              </span>
+            </span>
           </button>
           
-          <p class="form-response-time">Respondemos en menos de 24 hs</p>
+          <p class="form-response-time" style="animation-delay: 0.5s">Respondemos en menos de 24 hs</p>
           
-          <div class="form-feedback" style="display: none;"></div>
+          <div class="form-feedback">
+            <div class="feedback-success">
+              <svg class="success-checkmark" viewBox="0 0 52 52">
+                <circle class="success-checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                <path class="success-checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+              </svg>
+              <p class="feedback-message">Mensaje enviado correctamente</p>
+              <p class="feedback-submessage">Te responderemos pronto</p>
+            </div>
+            <div class="feedback-error">
+              <svg class="error-icon" viewBox="0 0 52 52">
+                <circle class="error-icon-circle" cx="26" cy="26" r="25" fill="none"/>
+                <path class="error-icon-line" fill="none" d="M16 16l20 20M36 16l-20 20"/>
+              </svg>
+              <p class="feedback-message">Error al enviar</p>
+              <p class="feedback-submessage">Por favor, intentá nuevamente</p>
+            </div>
+          </div>
         </form>
         
-        <div class="contact-divider">
+        <div class="contact-divider" style="animation-delay: 0.6s">
           <span>o también por</span>
         </div>
         
-        <div class="contact-social">
+        <div class="contact-social" style="animation-delay: 0.7s">
           <a class="btn btn-outline btn-instagram" href="https://www.instagram.com/axusanalytics/" target="_blank" rel="noopener">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -675,13 +701,33 @@
     }, false);
   </script>
 
-  <!-- Script para Formulario de Contacto -->
+  <!-- Script para Formulario de Contacto Premium -->
   <script>
     const contactForm = document.getElementById('contactForm');
     const feedbackDiv = document.querySelector('.form-feedback');
-    const btnText = document.querySelector('.btn-text');
-    const btnLoading = document.querySelector('.btn-loading');
     const submitBtn = document.querySelector('.btn-submit');
+    const formInputs = document.querySelectorAll('.form-input');
+    
+    // Activar placeholder-shown para floating labels
+    formInputs.forEach(input => {
+      // Asegurar que el placeholder existe para :not(:placeholder-shown)
+      if (!input.hasAttribute('placeholder')) {
+        input.setAttribute('placeholder', ' ');
+      }
+      
+      // Mantener label flotante si hay valor al cargar
+      if (input.value) {
+        input.setAttribute('data-filled', 'true');
+      }
+      
+      input.addEventListener('blur', () => {
+        if (input.value) {
+          input.setAttribute('data-filled', 'true');
+        } else {
+          input.removeAttribute('data-filled');
+        }
+      });
+    });
     
     if (contactForm) {
       contactForm.addEventListener('submit', async (e) => {
@@ -693,21 +739,21 @@
         const mensaje = document.getElementById('mensaje').value.trim();
         
         if (!nombre || !email || !mensaje) {
-          showFeedback('Por favor, completá todos los campos', 'error');
+          showFeedback('error');
           return;
         }
         
         // Validar email
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
-          showFeedback('Por favor, ingresá un email válido', 'error');
+          showFeedback('error');
           return;
         }
         
-        // Deshabilitar botón y mostrar loading
+        // Activar estado loading
         submitBtn.disabled = true;
-        btnText.style.display = 'none';
-        btnLoading.style.display = 'inline';
+        submitBtn.classList.add('loading');
+        feedbackDiv.className = 'form-feedback';
         
         try {
           const formData = new FormData(contactForm);
@@ -720,29 +766,47 @@
           });
           
           if (response.ok) {
-            showFeedback('Mensaje enviado correctamente. Te responderemos pronto!', 'success');
-            contactForm.reset();
+            // Success con animación
+            submitBtn.classList.remove('loading');
+            showFeedback('success');
+            
+            // Reset form después de 3 segundos
+            setTimeout(() => {
+              contactForm.reset();
+              formInputs.forEach(input => {
+                input.removeAttribute('data-filled');
+              });
+              
+              // Ocultar feedback después de 6 segundos
+              setTimeout(() => {
+                feedbackDiv.className = 'form-feedback';
+                submitBtn.disabled = false;
+              }, 3000);
+            }, 3000);
           } else {
-            showFeedback('Error al enviar, intentá nuevamente', 'error');
+            submitBtn.classList.remove('loading');
+            submitBtn.disabled = false;
+            showFeedback('error');
+            
+            // Ocultar error después de 5 segundos
+            setTimeout(() => {
+              feedbackDiv.className = 'form-feedback';
+            }, 5000);
           }
         } catch (error) {
-          showFeedback('Error al enviar, intentá nuevamente', 'error');
-        } finally {
+          submitBtn.classList.remove('loading');
           submitBtn.disabled = false;
-          btnText.style.display = 'inline';
-          btnLoading.style.display = 'none';
+          showFeedback('error');
+          
+          setTimeout(() => {
+            feedbackDiv.className = 'form-feedback';
+          }, 5000);
         }
       });
     }
     
-    function showFeedback(message, type) {
-      feedbackDiv.textContent = message;
-      feedbackDiv.className = `form-feedback ${type}`;
-      feedbackDiv.style.display = 'block';
-      
-      setTimeout(() => {
-        feedbackDiv.style.display = 'none';
-      }, 6000);
+    function showFeedback(type) {
+      feedbackDiv.className = `form-feedback show-${type}`;
     }
   </script>
 </body>
