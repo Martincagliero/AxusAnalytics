@@ -1388,28 +1388,28 @@ a {
   justify-content: center;
 }
 
-/* ===== PROJECTS MODERN GRID ===== */
-.projects-grid-modern {
+/* ===== PROJECTS CAROUSEL 3D ===== */
+.projects-carousel-3d {
   display: grid;
-  gap: 80px;
-  max-width: 1200px;
+  gap: 96px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
-.project-card-modern {
+.project-carousel-item {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 64px;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 72px;
   align-items: center;
   opacity: 0;
   animation: fadeInUpProjects 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-.project-card-modern:nth-child(even) {
+.project-carousel-item:nth-child(even) {
   direction: rtl;
 }
 
-.project-card-modern:nth-child(even) > * {
+.project-carousel-item:nth-child(even) > * {
   direction: ltr;
 }
 
@@ -1424,65 +1424,119 @@ a {
   }
 }
 
-.project-card-modern.fade-in-up[style*="animation-delay"] {
-  animation: fadeInUpProjects 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+/* 3D Carousel Container */
+.carousel-3d-wrapper {
+  perspective: 1200px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Mockup Container */
-.project-mockup-container {
+.carousel-3d-container {
   position: relative;
-  perspective: 1000px;
-}
-
-.project-mockup {
-  position: relative;
-  border-radius: 20px;
-  overflow: hidden;
+  width: 360px;
+  height: 360px;
   transform-style: preserve-3d;
-  animation: floatMockup 6s ease-in-out infinite;
+  animation: rotate3d 12s linear infinite;
 }
 
-@keyframes floatMockup {
+@keyframes rotate3d {
+  0% {
+    transform: rotateY(0deg) rotateX(5deg);
+  }
+  100% {
+    transform: rotateY(360deg) rotateX(5deg);
+  }
+}
+
+.project-carousel-item:hover .carousel-3d-container {
+  animation-play-state: paused;
+}
+
+/* Mockup Slides Positioning */
+.mockup-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  /* Calcula el ángulo basado en --index y cantidad de mockups */
+  --total-mockups: 2;
+  --angle: calc(var(--index) * (360deg / var(--total-mockups)));
+  --radius: 180px;
+  transform: 
+    rotateY(var(--angle))
+    translateZ(var(--radius))
+    rotateY(calc(var(--angle) * -1));
+  opacity: 1;
+  animation: floatVertical 4s ease-in-out infinite;
+}
+
+.mockup-slide:nth-child(2) {
+  animation-delay: 2s;
+}
+
+@keyframes floatVertical {
   0%, 100% {
-    transform: translateY(0px) rotateZ(1deg);
+    transform: 
+      rotateY(var(--angle))
+      translateZ(var(--radius))
+      rotateY(calc(var(--angle) * -1))
+      translateY(0px);
   }
   50% {
-    transform: translateY(-20px) rotateZ(-0.5deg);
+    transform: 
+      rotateY(var(--angle))
+      translateZ(var(--radius))
+      rotateY(calc(var(--angle) * -1))
+      translateY(-20px);
   }
 }
 
-.mockup-image {
-  display: block;
+.mockup-frame {
+  width: 280px;
+  height: 420px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 
+    0 24px 64px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(0, 212, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  backdrop-filter: blur(20px);
+  position: relative;
+  transition: all var(--transition-base);
+}
+
+.mockup-frame img {
   width: 100%;
-  height: auto;
-  border: 1px solid rgba(0, 212, 255, 0.2);
-  border-radius: 20px;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.mockup-mobile {
+  width: 160px;
+  height: 320px;
+}
+
+.mockup-mobile img {
+  object-position: center;
+}
+
+.project-carousel-item:hover .mockup-frame {
   box-shadow: 
-    0 20px 60px rgba(0, 0, 0, 0.6),
-    0 0 60px rgba(0, 212, 255, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(40px);
+    0 32px 80px rgba(0, 0, 0, 0.6),
+    0 0 60px rgba(0, 212, 255, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transform: scale(1.05);
 }
 
-.mockup-glow {
-  position: absolute;
-  inset: -20px;
-  background: radial-gradient(600px at 50% 50%, rgba(6, 182, 212, 0.15), transparent);
-  border-radius: 20px;
-  pointer-events: none;
-  opacity: 0.6;
-  z-index: -1;
-}
-
-.project-card-modern:hover .mockup-image {
-  box-shadow: 
-    0 32px 80px rgba(0, 0, 0, 0.8),
-    0 0 80px rgba(0, 212, 255, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
-  transform: scale(1.02);
-}
-
-/* Proyecto Info */
+/* Project Info */
 .project-info {
   display: flex;
   flex-direction: column;
@@ -1561,10 +1615,6 @@ a {
   justify-content: center;
   font-size: 0.95rem;
   padding: 12px 24px;
-}
-
-.project-card-modern:hover .project-actions .btn.btn-primary {
-  opacity: 1;
 }
 
 /* ===== METHOD/STEPS ===== */
@@ -1799,22 +1849,43 @@ a {
     flex: 1;
   }
 
-  /* Proyectos responsive */
-  .project-card-modern {
+  /* Proyectos Carousel - Tablet */
+  .project-carousel-item {
     grid-template-columns: 1fr;
     gap: 40px;
   }
 
-  .project-card-modern:nth-child(even) {
+  .project-carousel-item:nth-child(even) {
     direction: ltr;
   }
 
-  .project-mockup {
-    animation: none;
+  .carousel-3d-wrapper {
+    height: 450px;
   }
 
-  .projects-grid-modern {
-    gap: 60px;
+  .carousel-3d-container {
+    width: 320px;
+    height: 320px;
+    animation: rotate3dTablet 12s linear infinite;
+  }
+
+  @keyframes rotate3dTablet {
+    0% {
+      transform: rotateY(0deg) rotateX(0deg);
+    }
+    100% {
+      transform: rotateY(360deg) rotateX(0deg);
+    }
+  }
+
+  .mockup-frame {
+    width: 240px;
+    height: 360px;
+  }
+
+  .mockup-mobile {
+    width: 140px;
+    height: 280px;
   }
 }
 
@@ -1907,53 +1978,64 @@ a {
     font-size: 1.05rem;
   }
 
-  .project-card {
-    padding: 32px 24px;
+  /* Proyectos Carousel - Mobile */
+  .projects-carousel-3d {
+    gap: 56px;
   }
 
-  .project-title {
-    font-size: 1.5rem;
-  }
-
-  .project-actions {
-    flex-direction: column;
-  }
-
-  .project-actions .btn {
-    width: 100%;
-    min-width: auto;
-  }
-
-  /* Proyectos Modern Mobile */
-  .projects-grid-modern {
-    gap: 48px;
-  }
-
-  .project-card-modern {
+  .project-carousel-item {
     grid-template-columns: 1fr;
     gap: 28px;
   }
 
-  .project-mockup {
-    animation: floatMockupMobile 4s ease-in-out infinite;
+  .carousel-3d-wrapper {
+    height: 380px;
   }
 
-  @keyframes floatMockupMobile {
-    0%, 100% {
-      transform: translateY(0px) rotateZ(0deg);
+  .carousel-3d-container {
+    width: 280px;
+    height: 280px;
+    animation: rotate3dMobile 14s linear infinite;
+  }
+
+  @keyframes rotate3dMobile {
+    0% {
+      transform: rotateY(0deg) rotateX(8deg);
     }
     50% {
-      transform: translateY(-12px) rotateZ(0deg);
+      transform: rotateY(180deg) rotateX(8deg);
+      opacity: 0.8;
+    }
+    100% {
+      transform: rotateY(360deg) rotateX(8deg);
     }
   }
 
-  .project-mockup-container {
-    max-width: 100%;
+  .mockup-slide {
+    --radius: 140px;
   }
 
-  .project-type {
-    font-size: 0.75rem;
-    padding: 6px 12px;
+  .mockup-frame {
+    width: 200px;
+    height: 300px;
+    border-radius: 16px;
+    box-shadow: 
+      0 16px 40px rgba(0, 0, 0, 0.3),
+      0 0 30px rgba(0, 212, 255, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  .mockup-mobile {
+    width: 120px;
+    height: 240px;
+  }
+
+  .project-carousel-item:hover .mockup-frame {
+    box-shadow: 
+      0 20px 50px rgba(0, 0, 0, 0.4),
+      0 0 40px rgba(0, 212, 255, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transform: scale(1.03);
   }
 
   .project-title {

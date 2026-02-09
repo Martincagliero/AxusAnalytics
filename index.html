@@ -186,15 +186,26 @@
         <p class="section-intro" data-i18n="projects.intro">Trabajos reales que muestran cómo desarrollamos soluciones personalizadas para cada negocio.</p>
       </div>
       
-      <div class="projects-grid-modern">
-        <!-- Proyecto 1 -->
-        <article class="project-card-modern fade-in-up">
-          <div class="project-mockup-container">
-            <div class="project-mockup">
-              <img src="images/proyecto1-desktop.png" alt="Portfolio professional para diseñador web mockup" class="mockup-image" />
-              <div class="mockup-glow"></div>
+      <div class="projects-carousel-3d">
+        <!-- Proyecto 1: Portfolio profesional -->
+        <article class="project-carousel-item fade-in-up" data-project-id="project-1">
+          <div class="carousel-3d-wrapper">
+            <div class="carousel-3d-container" data-mockups="2">
+              <!-- Mockup Desktop (índice 0, ángulo 0°) -->
+              <div class="mockup-slide" style="--index: 0">
+                <div class="mockup-frame">
+                  <img src="images/proyecto1-desktop.png" alt="Portfolio proyecto desktop" />
+                </div>
+              </div>
+              <!-- Mockup Mobile (índice 1, ángulo 180°) -->
+              <div class="mockup-slide" style="--index: 1">
+                <div class="mockup-frame mockup-mobile">
+                  <img src="images/proyecto1-mobile.png" alt="Portfolio proyecto mobile" />
+                </div>
+              </div>
             </div>
           </div>
+          
           <div class="project-info">
             <span class="project-type" data-i18n="projects.project3.type">Portfolio Web</span>
             <h4 class="project-title" data-i18n="projects.project3.title">Portfolio profesional para diseñador web</h4>
@@ -226,14 +237,23 @@
           </div>
         </article>
 
-        <!-- Proyecto 2 -->
-        <article class="project-card-modern fade-in-up" style="animation-delay: 0.15s">
-          <div class="project-mockup-container">
-            <div class="project-mockup">
-              <img src="images/proyecto2-desktop.png" alt="Sistema de turnos para barberías mockup" class="mockup-image" />
-              <div class="mockup-glow"></div>
+        <!-- Proyecto 2: Sistema de turnos -->
+        <article class="project-carousel-item fade-in-up" data-project-id="project-2" style="animation-delay: 0.15s">
+          <div class="carousel-3d-wrapper">
+            <div class="carousel-3d-container" data-mockups="2">
+              <div class="mockup-slide" style="--index: 0">
+                <div class="mockup-frame">
+                  <img src="images/proyecto2-desktop.png" alt="Sistema de turnos desktop" />
+                </div>
+              </div>
+              <div class="mockup-slide" style="--index: 1">
+                <div class="mockup-frame mockup-mobile">
+                  <img src="images/proyecto2-mobile.png" alt="Sistema de turnos mobile" />
+                </div>
+              </div>
             </div>
           </div>
+          
           <div class="project-info">
             <span class="project-type" data-i18n="projects.project1.type">Sistema Web</span>
             <h4 class="project-title" data-i18n="projects.project1.title">Sistema de turnos online para barberías</h4>
@@ -265,14 +285,23 @@
           </div>
         </article>
 
-        <!-- Proyecto 3 -->
-        <article class="project-card-modern fade-in-up" style="animation-delay: 0.3s">
-          <div class="project-mockup-container">
-            <div class="project-mockup">
-              <img src="images/proyecto3-desktop.png" alt="Web para artista textil mockup" class="mockup-image" />
-              <div class="mockup-glow"></div>
+        <!-- Proyecto 3: Web artista textil -->
+        <article class="project-carousel-item fade-in-up" data-project-id="project-3" style="animation-delay: 0.3s">
+          <div class="carousel-3d-wrapper">
+            <div class="carousel-3d-container" data-mockups="2">
+              <div class="mockup-slide" style="--index: 0">
+                <div class="mockup-frame">
+                  <img src="images/proyecto3-desktop.png" alt="Casi como ella desktop" />
+                </div>
+              </div>
+              <div class="mockup-slide" style="--index: 1">
+                <div class="mockup-frame mockup-mobile">
+                  <img src="images/proyecto3-mobile.png" alt="Casi como ella mobile" />
+                </div>
+              </div>
             </div>
           </div>
+          
           <div class="project-info">
             <span class="project-type" data-i18n="projects.project2.type">Ecommerce</span>
             <h4 class="project-title" data-i18n="projects.project2.title">Web para artista textil - Casi como ella</h4>
@@ -617,6 +646,48 @@
 
     // Mostrar primer slide
     showSlide(0);
+  </script>
+
+  <!-- Script para Carousel 3D Projects -->
+  <script>
+    // ===== CAROUSEL 3D INITIALIZATION =====
+    document.addEventListener('DOMContentLoaded', () => {
+      const carouselItems = document.querySelectorAll('.project-carousel-item');
+      
+      carouselItems.forEach(item => {
+        const container = item.querySelector('.carousel-3d-container');
+        const slides = item.querySelectorAll('.mockup-slide');
+        
+        if (container && slides.length > 0) {
+          // Pausa/Resume en hover
+          item.addEventListener('mouseenter', () => {
+            container.style.animationPlayState = 'paused';
+            slides.forEach(slide => {
+              slide.style.animationPlayState = 'paused';
+            });
+          });
+          
+          item.addEventListener('mouseleave', () => {
+            container.style.animationPlayState = 'running';
+            slides.forEach(slide => {
+              slide.style.animationPlayState = 'running';
+            });
+          });
+        }
+      });
+    });
+
+    // ===== TOUCH SUPPORT MOBILE =====
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    document.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, false);
+    
+    document.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+    }, false);
   </script>
 </body>
 </html>
