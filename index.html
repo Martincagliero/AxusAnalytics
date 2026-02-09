@@ -431,14 +431,38 @@
 
   <!-- Contacto -->
   <section class="section contact" id="contacto">
-    <div class="container contact-box">
-      <div>
-        <h3 data-i18n="contact.title">Contacto</h3>
-        <p data-i18n="contact.text">Escribinos y coordinamos una primera charla para entender tu proyecto web.</p>
+    <div class="container">
+      <div class="section-header">
+        <h3>Contacto</h3>
+        <p class="section-intro">Escribinos y coordinamos una primera charla para entender tu proyecto web.</p>
       </div>
-      <div class="contact-actions">
-        <a class="btn btn-primary" href="https://www.instagram.com/axusanalytics/" target="_blank" rel="noopener">Instagram</a>
-        <a class="btn btn-primary" href="mailto:axusanalystics@gmail.com" data-i18n="contact.email">Pedí tu web</a>
+      
+      <div class="contact-form-wrapper">
+        <form id="contactForm" class="contact-form" action="https://formspree.io/f/mjgekgjg" method="POST">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="tu@email.com">
+          </div>
+          
+          <div class="form-group">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Contanos sobre tu proyecto..."></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-submit">
+            <span class="btn-text">Enviar mensaje</span>
+            <span class="btn-loading" style="display: none;">Enviando...</span>
+          </button>
+          
+          <p class="form-response-time">Respondemos en menos de 24 hs</p>
+          
+          <div class="form-feedback" style="display: none;"></div>
+        </form>
       </div>
     </div>
   </section>
@@ -628,6 +652,77 @@
     document.addEventListener('touchend', (e) => {
       touchEndX = e.changedTouches[0].screenX;
     }, false);
+  </script>
+
+  <!-- Script para Formulario de Contacto -->
+  <script>
+    const contactForm = document.getElementById('contactForm');
+    const feedbackDiv = document.querySelector('.form-feedback');
+    const btnText = document.querySelector('.btn-text');
+    const btnLoading = document.querySelector('.btn-loading');
+    const submitBtn = document.querySelector('.btn-submit');
+    
+    if (contactForm) {
+      contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        // Validación básica
+        const nombre = document.getElementById('nombre').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const mensaje = document.getElementById('mensaje').value.trim();
+        
+        if (!nombre || !email || !mensaje) {
+          showFeedback('Por favor, completá todos los campos', 'error');
+          return;
+        }
+        
+        // Validar email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          showFeedback('Por favor, ingresá un email válido', 'error');
+          return;
+        }
+        
+        // Deshabilitar botón y mostrar loading
+        submitBtn.disabled = true;
+        btnText.style.display = 'none';
+        btnLoading.style.display = 'inline';
+        
+        try {
+          const formData = new FormData(contactForm);
+          const response = await fetch(contactForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+          
+          if (response.ok) {
+            showFeedback('Mensaje enviado correctamente. Te responderemos pronto!', 'success');
+            contactForm.reset();
+          } else {
+            showFeedback('Error al enviar, intentá nuevamente', 'error');
+          }
+        } catch (error) {
+          showFeedback('Error al enviar, intentá nuevamente', 'error');
+        } finally {
+          submitBtn.disabled = false;
+          btnText.style.display = 'inline';
+          btnLoading.style.display = 'none';
+        }
+      });
+    }
+    
+    function showFeedback(message, type) {
+      feedbackDiv.textContent = message;
+      feedbackDiv.className = `form-feedback ${type}`;
+      feedbackDiv.style.display = 'block';
+      
+      setTimeout(() => {
+        feedbackDiv.style.display = 'none';
+      }, 6000);
+    }
   </script>
 </body>
 </html>
