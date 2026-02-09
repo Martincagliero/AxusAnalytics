@@ -408,48 +408,27 @@
     </div>
   </section>
 
-  <!-- Experiencias de Uso -->
-  <section class="section" id="experiencias">
+  <!-- Ubicación -->
+  <section class="section" id="ubicacion">
     <div class="container">
-      <h3 data-i18n="experiences.title">Experiencias de uso</h3>
-      <p class="section-intro" data-i18n="experiences.intro">Ejemplos ilustrativos de cómo nuestros servicios impactan positivamente en diferentes tipos de negocios.</p>
-      <p class="disclaimer" data-i18n="experiences.disclaimer">* Los testimonios que verás a continuación son ejemplos ilustrativos de uso y no representan clientes reales.</p>
-      
-      <div class="testimonials-carousel">
-        <div class="testimonial-item">
-          <div class="testimonial-avatar">✂️</div>
-          <p class="testimonial-text" data-i18n="experiences.testimonial1.text">"Ahora mis clientes pueden reservar turnos directo desde mi web. Se redujo un 80% los mensajes de WhatsApp para agendar."</p>
-          <p class="testimonial-name" data-i18n="experiences.testimonial1.name">Barbería Local</p>
-          <p class="testimonial-role" data-i18n="experiences.testimonial1.role">Propietario</p>
-        </div>
-
-        <div class="testimonial-item">
-          <div class="testimonial-avatar">👗</div>
-          <p class="testimonial-text" data-i18n="experiences.testimonial2.text">"Mi catálogo online funciona perfecto. Los clientes ven mis trabajos desde el celular y me llegan más consultas por Instagram."</p>
-          <p class="testimonial-name" data-i18n="experiences.testimonial2.name">Estudio de Moda</p>
-          <p class="testimonial-role" data-i18n="experiences.testimonial2.role">Emprendedora</p>
-        </div>
-
-        <div class="testimonial-item">
-          <div class="testimonial-avatar">📊</div>
-          <p class="testimonial-text" data-i18n="experiences.testimonial3.text">"Además de la web, agregamos estadísticas. Ahora sabemos qué servicios son los más consultados y ajustamos nuestras promociones."</p>
-          <p class="testimonial-name" data-i18n="experiences.testimonial3.name">Centro de Estética</p>
-          <p class="testimonial-role" data-i18n="experiences.testimonial3.role">Responsable de Marketing</p>
-        </div>
-
-        <div class="testimonial-item">
-          <div class="testimonial-avatar">💼</div>
-          <p class="testimonial-text" data-i18n="experiences.testimonial4.text">"El panel es súper intuitivo. Cambio precios y fotos sin llamar a nadie. Mi web siempre está actualizada."</p>
-          <p class="testimonial-name" data-i18n="experiences.testimonial4.name">Estudio Contable</p>
-          <p class="testimonial-role" data-i18n="experiences.testimonial4.role">PyME</p>
-        </div>
+      <div class="section-header">
+        <h3 data-i18n="location.title">Ubicación</h3>
+        <p class="section-intro" data-i18n="location.intro">Trabajamos desde Sunchales, Santa Fe, Argentina. Atendemos clientes de forma remota.</p>
       </div>
-
-      <div class="carousel-indicators">
-        <button class="indicator active" data-slide="0"></button>
-        <button class="indicator" data-slide="1"></button>
-        <button class="indicator" data-slide="2"></button>
-        <button class="indicator" data-slide="3"></button>
+      
+      <div class="map-container">
+        <div class="map-wrapper">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27262.871234567!2d-61.5616!3d-30.9436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b55e5d7c5b3b5b%3A0x5c5b5b5b5b5b5b5b!2sSunchales%2C%20Santa%20Fe%2C%20Argentina!5e0!3m2!1sen!2sar!4v1234567890123!5m2!1sen!2sar" 
+            width="100%" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa de ubicación en Sunchales, Santa Fe, Argentina">
+          </iframe>
+        </div>
       </div>
     </div>
   </section>
@@ -611,41 +590,6 @@
         }
       });
     });
-  </script>
-
-  <!-- Script para Carrusel -->
-  <script>
-    let currentSlide = 0;
-    const testimonials = document.querySelectorAll('.testimonial-item');
-    const indicators = document.querySelectorAll('.indicator');
-    const totalSlides = testimonials.length;
-
-    function showSlide(n) {
-      testimonials.forEach(item => item.classList.remove('active'));
-      indicators.forEach(indicator => indicator.classList.remove('active'));
-      
-      testimonials[n].classList.add('active');
-      indicators[n].classList.add('active');
-    }
-
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % totalSlides;
-      showSlide(currentSlide);
-    }
-
-    // Cambiar slide cada 6 segundos
-    setInterval(nextSlide, 6000);
-
-    // Permitir click en indicadores
-    indicators.forEach((indicator, index) => {
-      indicator.addEventListener('click', () => {
-        currentSlide = index;
-        showSlide(currentSlide);
-      });
-    });
-
-    // Mostrar primer slide
-    showSlide(0);
   </script>
 
   <!-- Script para Carousel 3D Projects -->
