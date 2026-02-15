@@ -109,6 +109,16 @@ const translations = {
         benefit4: '100% responsive y rápido',
         cta1: 'Ver portfolio',
         cta2: 'Creá tu portfolio'
+      },
+      project4: {
+        title: 'RT Detail - Estética vehicular premium',
+        description: 'Sitio web moderno y elegante para servicio de detailing automotor, enfocado en conversión y presencia premium. Desarrollado por AXUS con diseño visual impactante y optimizado para captar clientes.',
+        benefit1: 'Diseño premium y profesional',
+        benefit2: 'Optimizado para conversión',
+        benefit3: 'Galería de servicios visuales',
+        benefit4: '100% responsive y rápido',
+        cta1: 'Ver proyecto',
+        cta2: 'Solicitar similar'
       }
     },
     method: {
@@ -287,6 +297,16 @@ const translations = {
         benefit4: '100% responsive and fast',
         cta1: 'See portfolio',
         cta2: 'Create your portfolio'
+      },
+      project4: {
+        title: 'RT Detail - Premium car detailing',
+        description: 'Modern and elegant website for automotive detailing service, focused on conversion and premium presence. Developed by AXUS with impactful visual design and optimized to attract customers.',
+        benefit1: 'Premium and professional design',
+        benefit2: 'Conversion optimized',
+        benefit3: 'Visual services gallery',
+        benefit4: '100% responsive and fast',
+        cta1: 'See project',
+        cta2: 'Request similar'
       }
     },
     method: {
